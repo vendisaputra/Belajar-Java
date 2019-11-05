@@ -3,9 +3,11 @@ package com.belajar.Belajar.java.entity;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.io.Serializable;
+import java.util.Set;
 
 @Entity
-@Data @Table(name = "tb_matakuliah")
+@Table(name = "tb_matakuliah")
 public class Matakuliah {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -16,4 +18,36 @@ public class Matakuliah {
     private String kode;
     @Column(name = "mtk_sks")
     private int sks;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getNama() {
+        return nama;
+    }
+
+    public void setNama(String nama) {
+        this.nama = nama;
+    }
+
+    public String getKode() {
+        return kode;
+    }
+
+    public void setKode(String kode) {
+        this.kode = kode;
+    }
+
+    public int getSks() {
+        return sks;
+    }
+
+    public void setSks(int sks) {
+        this.sks = sks;
+    }
 }

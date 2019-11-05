@@ -17,7 +17,6 @@ public class MatakuliahController {
 
     private final MatakuliahService matakuliahService;
 
-
     public MatakuliahController(MatakuliahService matakuliahService) {
         this.matakuliahService = matakuliahService;
     }
