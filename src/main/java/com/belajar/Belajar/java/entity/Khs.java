@@ -12,9 +12,9 @@ import java.io.Serializable;
 @Table(name = "tb_khs")
 public class Khs  {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_mahasiswa")
     private Mahasiswa mahasiswa;
     @Column(name = "khs_angka")
