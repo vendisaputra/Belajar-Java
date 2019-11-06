@@ -1,12 +1,14 @@
 package com.belajar.Belajar.java.entity;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import javax.persistence.*;
 import java.util.Set;
 
 @Entity
 @Table(name = "tb_semester")
+@EqualsAndHashCode(exclude = "khs")
 public class Semester {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -15,6 +17,12 @@ public class Semester {
     private int semester;
     @Column(name = "ket")
     private String ket;
+    @OneToMany(mappedBy = "semester")
+    private Set<Khs> khs;
+
+    public void setKhs(Set<Khs> khs) {
+        this.khs = khs;
+    }
 
     public int getId() {
         return id;

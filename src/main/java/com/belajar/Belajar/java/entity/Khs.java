@@ -17,10 +17,32 @@ public class Khs  {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_mahasiswa")
     private Mahasiswa mahasiswa;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "id_semester")
+    private Semester semester;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "id_matkul")
+    private Matakuliah matakuliah;
     @Column(name = "khs_angka")
     private int khs_angka;
     @Column(name = "khs_huruf")
     private String khs_huruf;
+
+    public Semester getSemester() {
+        return semester;
+    }
+
+    public void setSemester(Semester semester) {
+        this.semester = semester;
+    }
+
+    public Matakuliah getMatakuliah() {
+        return matakuliah;
+    }
+
+    public void setMatakuliah(Matakuliah matakuliah) {
+        this.matakuliah = matakuliah;
+    }
 
     public int getId() {
         return id;

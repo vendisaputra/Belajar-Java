@@ -18,6 +18,12 @@ public class Matakuliah {
     private String kode;
     @Column(name = "mtk_sks")
     private int sks;
+    @OneToMany(mappedBy = "matakuliah")
+    private Set<Khs> khs;
+
+    public void setKhs(Set<Khs> khs) {
+        this.khs = khs;
+    }
 
     public int getId() {
         return id;
