@@ -1,6 +1,8 @@
 package com.belajar.Belajar.java.entity;
 
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 import org.hibernate.validator.constraints.br.CPF;
@@ -9,6 +11,8 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
+@Getter
+@Setter
 @Table(name = "tb_khs")
 public class Khs  {
     @Id
@@ -28,51 +32,4 @@ public class Khs  {
     @Column(name = "khs_huruf")
     private String khs_huruf;
 
-    public Semester getSemester() {
-        return semester;
-    }
-
-    public void setSemester(Semester semester) {
-        this.semester = semester;
-    }
-
-    public Matakuliah getMatakuliah() {
-        return matakuliah;
-    }
-
-    public void setMatakuliah(Matakuliah matakuliah) {
-        this.matakuliah = matakuliah;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public Mahasiswa getMahasiswa() {
-        return mahasiswa;
-    }
-
-    public void setMahasiswa(Mahasiswa mahasiswa) {
-        this.mahasiswa = mahasiswa;
-    }
-
-    public int getKhs_angka() {
-        return khs_angka;
-    }
-
-    public void setKhs_angka(int khs_angka) {
-        this.khs_angka = khs_angka;
-    }
-
-    public String getKhs_huruf() {
-        return khs_huruf;
-    }
-
-    public void setKhs_huruf(String khs_huruf) {
-        this.khs_huruf = khs_huruf;
-    }
 }

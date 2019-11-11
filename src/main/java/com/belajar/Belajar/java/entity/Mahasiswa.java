@@ -1,9 +1,9 @@
 package com.belajar.Belajar.java.entity;
 
-import jdk.nashorn.internal.objects.annotations.Getter;
-import jdk.nashorn.internal.objects.annotations.Setter;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -13,7 +13,10 @@ import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-@Entity @Table(name = "tb_mahasiswa")
+@Entity
+@Getter
+@Setter
+@Table(name = "tb_mahasiswa")
 @EqualsAndHashCode(exclude = "khs")
 public class Mahasiswa {
 
@@ -34,55 +37,5 @@ public class Mahasiswa {
     private Set<Khs> khs;
 
 
-    public void setKhs(Set<Khs> khs) {
-        this.khs = khs;
-    }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getNim() {
-        return nim;
-    }
-
-    public void setNim(String nim) {
-        this.nim = nim;
-    }
-
-    public String getNama() {
-        return nama;
-    }
-
-    public void setNama(String nama) {
-        this.nama = nama;
-    }
-
-    public String getGender() {
-        return gender;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-
-    public String getAlamat() {
-        return alamat;
-    }
-
-    public void setAlamat(String alamat) {
-        this.alamat = alamat;
-    }
-
-    public Date getTglLahir() {
-        return tglLahir;
-    }
-
-    public void setTglLahir(Date tglLahir) {
-        this.tglLahir = tglLahir;
-    }
 }
